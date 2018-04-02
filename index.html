@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="foundation.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<form>
+    <div class="row">
+        <div class="medium-12 columns">
+        </div>
+    </div>
+    <div class="row">
+        <div class="medium-12 columns">
+
+            <label>
+                Source PNG Sequence
+                <span class="input-group">
+                    <input class="input-group-field" type="text" name="source" placeholder="c:/path/to/your/source/first_file_in_sequence-0000.png">
+                    <span class="input-group-button">
+                        <button class="button" type="button" id="chooseSource">Choose First File</button>
+                    </span>
+                </span>
+            </label>
+
+            <label>
+                FFMPEG Output Options
+                <span class="input-group">
+                    <input class="input-group-field" type="text" name="ffmpegOptions" value="-r 30 -vcodec libx264 -preset slow -crf 22 -pix_fmt yuv420p">
+                    <div id="ffmpegOptionPresets">
+                        <button class="button" type="button" value="-r 30 -vcodec libx264 -preset slow -crf 22 -pix_fmt yuv420p">H.264</button>
+                        <button class="button" type="button" value="-r 30 -vcodec libx265 -preset slow -x265-params crf=21 -pix_fmt yuv420p">H.265 HEVC</button>
+                        <button class="button" type="button" value="-r 30 -vcodec hap -format hap">HAP</button>
+                        <button class="button" type="button" value="-r 30 -vcodec hap -format hap_alpha">HAP-A</button>
+                        <button class="button" type="button" value="-r 30 -vcodec hap -format hap_q">HAPQ</button>
+                    </div>
+                </span>
+            </label>
+
+            <label>
+                Output Video Destination
+                <span class="input-group">
+                    <input class="input-group-field" type="text" name="destination" placeholder="c:/path/to/your/video/destination">
+                    <span class="input-group-button">
+                        <button class="button" type="button" id="chooseDestination">Choose Folder</button>
+                    </span>
+                </span>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="medium-12 columns">
+            <button class="large expanded button" type="submit" id="submitbtn">Convert</button>
+        </div>
+        <div class="medium-12 columns" id="messagebox"></div>
+    </div>
+</form>
+</body>
+<script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+</script>
+</html>

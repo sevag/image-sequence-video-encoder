@@ -1,0 +1,17 @@
+{
+  "name": "image-sequence-video-encoder",
+  "productName": "Image Sequence Video Encoder",
+  "description": "Simply convert image sequences into any type of video!",
+  "main": "main.js",
+  "version" : "0.0.1",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Image Sequence Video Encoder\""
+  },
+  "author": "Sevag Chanchanian",
+  "devDependencies": {
+    "electron-packager": "^7.3.0",
+    "electron-prebuilt": "^1.2.0",
+    "mkdirp": "^0.5.1"
+  }
+}
