@@ -30,9 +30,9 @@ module.exports = () => {
             role: 'help',
             submenu: [
                 {
-                    label: 'Britelite Immersive',
+                    label: 'Github',
                     click() {
-                        shell.openExternal('http://www.briteliteimmersive.com');
+                        shell.openExternal('https://github.com/sevag/image-sequence-video-encoder');
                     },
                 }
             ],
